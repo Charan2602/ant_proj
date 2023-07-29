@@ -5,6 +5,8 @@ WORKDIR /app
 # Copy the Java application source code and build.xml into the container
 COPY . .
 
+RUN apt-get update && apt-get install -y ant && ant
+
 RUN ant
 
 # Stage 2: Create a lightweight image to run the Java application
