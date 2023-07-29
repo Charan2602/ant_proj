@@ -14,7 +14,7 @@ FROM openjdk:11-jre-slim
 
 WORKDIR /app
 
-COPY --from=build /app/your-java-app.jar ./your-java-app.jar
+COPY --from=build /app/dist/AntExample.war ./your-java-app.war
 
 # Specify the command to run your Java application when the container starts
 CMD ["java", "-jar", "your-java-app.jar"]
